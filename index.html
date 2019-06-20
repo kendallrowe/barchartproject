@@ -12,10 +12,86 @@
     <h1>Check Out These Bar Charts!</h1>
   </header>
   <main id="maincontent" class="maincontent">
+    <section class="inputsAndCharts">
+      <div class="wrapper inputsOutputs">
+        <form action="" method="POST" name="loginForm" class="blackBGForm">
+          <div class="galleryRow flexItem clearfix">
+            <select name="serviceType">
+                <option value="financialAnalysis">Financial Analysis</option>
+                <option value="investmentPlanning">Investment Planning</option>
+                <option value="savingInvestment">Saving & Investment</option>
+                <option value="investmentBanking">Investment Banking</option>
+                <option value="businessConsulting" selected>Business Services Consulting</option>
+                <option value="onlineConsulting">Online Consulting</option>
+            </select><!-- Service Type -->
+
+            <input type="name" placeholder="Name" id="name" required>
+            <label for="name" class="visuallyhidden">name</label>
+          </div>
+
+          <div class="galleryRow flexItem clearfix">
+            <input type="phone" placeholder="Phone number" id="phone" required>
+            <label for="phone" class="visuallyhidden">phone</label>
+
+            <input type="email" placeholder="Email Address" id="email" required>
+            <label for="email" class="visuallyhidden">email address</label>
+          </div>
+
+          <input type="submit" class="generalButton purpleButton" value="Send to Us">
+        </form>
+      
+      
+        <div class="statRow flexItem">
+          <div class="roleAndStat">
+            <div class="statLabel flexItem">
+              <P>Marketing Online</P>
+              <p>75%</p>
+            </div>
+            <div class="statBar marketingStat">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="roleAndStat">
+            <div class="statLabel flexItem">
+              <P>Design Consultant</P>
+              <p>85%</p>
+            </div>
+            <div class="statBar designStat">
+              <span></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="statRow flexItem">
+          <div class="roleAndStat">
+            <div class="statLabel flexItem">
+              <P>Deliver Business</P>
+              <p>68%</p>
+            </div>
+            <div class="statBar deliverStat">
+              <span></span>
+            </div>
+          </div>
+
+          <div class="roleAndStat">
+            <div class="statLabel flexItem">
+              <P>Field Manager</P>
+              <p>80%</p>
+            </div>
+            <div class="statBar fieldStat">
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div><!-- Wrapper -->
+    </section><!-- Main Section -->
+
+
+  </main>
   <footer>
     
   </footer>
-  </main>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="scripts/script.js"></script>
 </body>

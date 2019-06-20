@@ -38,3 +38,178 @@ img{
 .skip-link:focus {
     left: 0;
 }
+
+/*Wrapper Styles*/
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 97%;
+    text-align: center;
+  }
+  
+  .smallWrapper {
+    max-width: 600px;
+    width: 97%;
+    text-align: center;
+  }
+  
+  .centeredItem {
+    margin: 0 auto;
+  }
+
+/* Hero and Header Formatting */
+.hero {
+    background: linear-gradient(to top right,rgba(241, 248, 252, .8), rgba(13, 78, 247, .4), rgba(237, 20, 91, .7) ), url(Assets/charts-header.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 30vh;
+    margin: 0 auto;
+    position: relative;
+  }
+
+/*Buttons*/
+.headingButton {
+margin-top: 2vh;
+}
+
+.generalButton {
+border-radius: 30px;
+padding: 12.5px 30px;
+font-weight: bold;
+box-sizing: border-box;
+width: 150px;
+display: inline-block;
+text-align: center;
+transition: 0.3s;
+}
+
+.purpleButton {
+background-color: #6e45e2;
+color: white;
+}
+
+.purpleButton:hover,
+.whiteButton:hover,
+.buttonOnBlack:hover {
+  background: #ed145b;
+  color: white;
+}
+
+/* Section Formatting */
+/* Section Backgrounds */
+section{
+    padding-top: 15vh;
+    padding-bottom: 15vh;
+    text-align: center;
+    margin: 0 auto;
+}
+  
+section.redBG {
+    background-color: #ed145b;
+    color: white;
+    padding-bottom: 22.5vh;
+}
+
+.inputsOutputs {
+    display: flex;
+}
+  
+/* Input form Formatting */
+
+
+.containerForm {
+    text-align: center;
+    color: white;
+}
+  
+p.italicizedP {
+    font-family: 'Libre Baskerville', serif;
+    font-style: italic;
+}
+  
+.containerForm p {
+    margin-bottom: 5vh;
+}
+  
+select,
+input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 30px;
+    padding: 12.5px 30px;
+    width: 250px;
+    box-sizing: border-box;
+    font-weight: bold;
+    background-color: rgba(0,0,0,.7);
+    margin: 2vh 1vh;
+    border: none;
+    color: white;
+}
+  
+::placeholder {
+    color: white;
+}
+  
+select {
+    background-image: url(Assets/downarrow.png);
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: 90% center;
+}
+
+/* Bar Chart Output Section */
+/*Percentage Gradient Bars*/
+.statRow {
+    width: 100%;
+    justify-content: space-between;
+}
+  
+.roleAndStat {
+    width: 43%;
+    margin: 1vh 0;
+}
+  
+.statLabel {
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+  
+.statLabel p {
+    color: #171717;
+    font-size: 1.4rem;
+  
+}
+  
+.statBar {
+    height: 7px;
+    width: 100%;
+    position: relative;
+    background: #f1f8fc;
+    border-radius: 25px;
+}
+  
+.statBar > span {
+    display: block;
+    height: 100%;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ed145b, #6e45e2);
+    overflow: hidden;
+}
+  
+.marketingStat > span {
+    width: 75%;
+}
+  
+.designStat > span {
+    width: 85%;
+}
+  
+.deliverStat > span {
+    width: 68%;
+}
+  
+.fieldStat > span {
+    width: 80%;
+}
