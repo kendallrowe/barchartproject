@@ -14,17 +14,24 @@ $(document).ready(function(){
     addBars(barClassAndValues);
   };
 
+  // Function to add bars to chart area along with x axis labels, value-based heights
   function addBars(barsArray) {
+    const barWidth = (1/barsArray.length *100) - 5;
+    // Iterate through all bar array and add new bar for each
     barsArray.forEach(function(thisBar, index){
-      $( ".createdBarChart" ).append( "<dd class=\"barHolder\"></dd>" );
-      $( ".createdBarChart dd:last-of-type" ).append( "<span class=\"percentage " + thisBar[0] + "\"></span>" );
-      $( "." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>");
-      $( ".createdBarChart dd:last-of-type" ).append( "<div class=\"xAxisLabelContainer\"</div>" );
-      $( ".createdBarChart dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
+      $(".createdBarChart").append("<dd class=\"barHolder\"></dd>");
+      $(".createdBarChart dd:last-of-type").append("<span class=\"percentage " + thisBar[0] + "\"></span>");
+      $("." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>");
+      $(".createdBarChart dd:last-of-type").append("<div class=\"xAxisLabelContainer\"</div>");
+      $(".createdBarChart dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
       console.log(index + "th attempt:");
       console.log(thisBar[0]);
       console.log(thisBar[1]);
       console.log(thisBar[2]);
+      // Set heights and widths of bars dynamically
+      $("." + thisBar[0]).css("height", thisBar[2] + "%");
+
+      $(".barHolder").css("width", barWidth + "%");
     });
 
   }
