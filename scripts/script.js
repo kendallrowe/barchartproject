@@ -15,14 +15,16 @@ $(document).ready(function(){
   };
 
   function addBars(barsArray) {
-    let barString;
     barsArray.forEach(function(thisBar, index){
       $( ".createdBarChart" ).append( "<dd class=\"barHolder\"></dd>" );
-      $( ".barHolder:last-of-type" ).append( "<span class=\"percentage " + thisBar[0] + "\"></span>" );
-      $( "." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>")
-      barString = "";
-      $( ".barHolder:last-of-type" ).append( "<div class=\"xAxisLabelContainer\"</div>" );
-      $(".xAxisLabelContainer:last-of-type").append("<p>" + thisBar[1] + "</p>")
+      $( ".createdBarChart dd:last-of-type" ).append( "<span class=\"percentage " + thisBar[0] + "\"></span>" );
+      $( "." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>");
+      $( ".createdBarChart dd:last-of-type" ).append( "<div class=\"xAxisLabelContainer\"</div>" );
+      $( ".createdBarChart dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
+      console.log(index + "th attempt:");
+      console.log(thisBar[0]);
+      console.log(thisBar[1]);
+      console.log(thisBar[2]);
     });
 
   }
