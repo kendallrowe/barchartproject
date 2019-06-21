@@ -11,8 +11,21 @@ $(document).ready(function(){
       barClassAndValues[numberOfBars-1][2] = data[i+1];
     }
     console.log(barClassAndValues);
-
+    addBars(barClassAndValues);
   };
+
+  function addBars(barsArray) {
+    let barString;
+    barsArray.forEach(function(thisBar, index){
+      $( ".createdBarChart" ).append( "<dd class=\"barHolder\"></dd>" );
+      $( ".barHolder:last-of-type" ).append( "<span class=\"percentage " + thisBar[0] + "\"></span>" );
+      $( "." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>")
+      barString = "";
+      $( ".barHolder:last-of-type" ).append( "<div class=\"xAxisLabelContainer\"</div>" );
+      $(".xAxisLabelContainer:last-of-type").append("<p>" + thisBar[1] + "</p>")
+    });
+
+  }
     // $("#submitBtn").click(function(){        
       //   $("#chartForm").submit(function(){
         

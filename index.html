@@ -14,7 +14,7 @@
   <main id="maincontent" class="maincontent">
     <section class="inputsAndCharts">
       <div class="wrapper inputsOutputs">
-        <form action="" method="POST" name="loginForm" class="blackBGForm">
+        <form action="" method="POST" name="chartForm" id="chartForm">
           <div class="galleryRow flexItem clearfix">
             <select name="serviceType">
                 <option value="financialAnalysis">Financial Analysis</option>
@@ -36,11 +36,11 @@
             <input type="email" placeholder="Email Address" id="email" required>
             <label for="email" class="visuallyhidden">email address</label>
           </div>
-          <input type="submit" class="generalButton purpleButton" value="Send to Us">
-        </form>
+          <input type="submit" id="submitBtn" class="generalButton purpleButton" value="Send to Us">
+        </form> <!-- Bar Chart Specification Input Form  -->
       </div><!-- Wrapper -->
       <div class="wrapper">
-          <dl>
+          <dl class="createdBarChart">
             <div class="yAxisLabels">
               <span class="label Label1">
                 <p>100%</p>
@@ -76,7 +76,7 @@
             <dt>
               <h4>Browser market share June 2015</h4>
             </dt>
-            <dd class="barHolder">
+            <!-- <dd class="barHolder">
               <span class="percentage percentage-7">
                 <p>11.33%</p>
               </span>
@@ -123,12 +123,10 @@
               <div class="xAxisLabelContainer">
                 <p>Android</p>
               </div>
-            </dd>
+            </dd> -->
           </dl>
       </div>
     </section><!-- Main Section -->
-
-
   </main>
   <footer>
     
