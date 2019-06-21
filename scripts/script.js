@@ -11,34 +11,51 @@ $(document).ready(function(){
       barClassAndValues[numberOfBars-1][2] = data[i+1];
     }
     console.log(barClassAndValues);
-    addBars(barClassAndValues);
-    setTitleColour(options);
+    addBars(barClassAndValues, options);
+    changeTitle(options);
   };
 
   // Function to add bars to chart area along with x axis labels, value-based heights
-  function addBars(barsArray) {
+  function addBars(barsArray, options) {
+    let valueJustifyDirection = options[4];
     const barWidth = (1/barsArray.length *100) - 5;
     // Iterate through all bar array and add new bar for each
     barsArray.forEach(function(thisBar, index){
-      $(".createdBarChart").append("<dd class=\"barHolder\"></dd>");
-      $(".createdBarChart dd:last-of-type").append("<span class=\"percentage " + thisBar[0] + "\"></span>");
+      $(".barContainer").append("<dd class=\"barHolder\"></dd>");
+      $(".barContainer dd:last-of-type").append("<span class=\"percentage " + thisBar[0] + "\"></span>");
       $("." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>");
-      $(".createdBarChart dd:last-of-type").append("<div class=\"xAxisLabelContainer\"</div>");
-      $(".createdBarChart dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
+      $(".barContainer dd:last-of-type").append("<div class=\"xAxisLabelContainer\"</div>");
+      $(".barContainer dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
       // Set heights and widths of bars dynamically
       $("." + thisBar[0]).css("height", thisBar[2] + "%");
-
       $(".barHolder").css("width", barWidth + "%");
     });
+    // Set bar colour
+    $(".percentage").css("background-color", options[5]);
+    // Label inside of bar formatting
+    if (valueJustifyDirection === "top") {
+      valueJustifyDirection = "flex-start";
+    } else if (valueJustifyDirection === "bottom") {
+      valueJustifyDirection = "flex-end";
+    } else {
+      valueJustifyDirection = "center";
+    } 
+    $(".percentage").css("justify-content", valueJustifyDirection);
+    $(".percentage p").css("color", options[3]);
   }
 
-  function setTitleColour(options){
-    $(".createdBarChart dt h4").css({
-      "color": options[0],
-      "font-size": options[1]
-    });
+  // Function to generate html and style the y axis based on user specifications
+  function createYAxis(options) {
 
-      
+  }
+
+  function changeTitle(options){
+    $(".titleContainer h4").text(options[0]);
+    $(".titleContainer h4").css({
+      "text-transform": "capitalize",
+      "color": options[1],
+      "font-size": options[2]
+    });      
   }
     // $("#submitBtn").click(function(){        
       //   $("#chartForm").submit(function(){
@@ -46,7 +63,8 @@ $(document).ready(function(){
         //   });
         // });
         
-  drawBarChart(["IE 11", 11.33, "Chrome", 49.77, "Firefox", 16.09, "Safari", 5.41, "opera", 1.62, "android", 2],["#6e45e2", "20px"],null);
+  drawBarChart(["IE 11", 11.33, "Chrome", 49.77, "Firefox", 16.09, "Safari", 23, "opera", 70, "android", 14],
+                ["browser market share", "#6e45e2", "30px", "#6e45e2", "center", "#ed145b", "#aaa", "100%", 10],null);
 });
 
 
