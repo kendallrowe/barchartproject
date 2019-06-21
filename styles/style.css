@@ -186,11 +186,11 @@ select {
 }
 
 .label{
-    height: 10%;
     border-top: .25px solid darkgrey;
     border-bottom: .25px solid darkgrey;
     position: relative;
     text-align: right;
+    font-weight: 700;
 }
 
 .label p {
@@ -246,8 +246,14 @@ select {
     flex-direction: column;
 }
 
-.percentage p {
+.percentage p,
+.xAxisLabelContainer p,
+label p {
     font-size: 1rem;
+}
+
+.xAxisLabelContainer p,
+label p { 
     font-weight: 700;
 }
 
