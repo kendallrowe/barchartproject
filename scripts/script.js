@@ -12,6 +12,7 @@ $(document).ready(function(){
     }
     console.log(barClassAndValues);
     addBars(barClassAndValues);
+    setTitleColour(options);
   };
 
   // Function to add bars to chart area along with x axis labels, value-based heights
@@ -24,16 +25,20 @@ $(document).ready(function(){
       $("." + thisBar[0] ).append("<p>" + thisBar[2] + "</p>");
       $(".createdBarChart dd:last-of-type").append("<div class=\"xAxisLabelContainer\"</div>");
       $(".createdBarChart dd:last-of-type div").append("<p>" + thisBar[1] + "</p>");
-      console.log(index + "th attempt:");
-      console.log(thisBar[0]);
-      console.log(thisBar[1]);
-      console.log(thisBar[2]);
       // Set heights and widths of bars dynamically
       $("." + thisBar[0]).css("height", thisBar[2] + "%");
 
       $(".barHolder").css("width", barWidth + "%");
     });
+  }
 
+  function setTitleColour(options){
+    $(".createdBarChart dt h4").css({
+      "color": options[0],
+      "font-size": options[1]
+    });
+
+      
   }
     // $("#submitBtn").click(function(){        
       //   $("#chartForm").submit(function(){
@@ -41,7 +46,7 @@ $(document).ready(function(){
         //   });
         // });
         
-  drawBarChart(["IE 11", 11.33, "Chrome", 49.77, "Firefox", 16.09, "Safari", 5.41, "opera", 1.62, "android", 2],"",null);
+  drawBarChart(["IE 11", 11.33, "Chrome", 49.77, "Firefox", 16.09, "Safari", 5.41, "opera", 1.62, "android", 2],["#6e45e2", "20px"],null);
 });
 
 
